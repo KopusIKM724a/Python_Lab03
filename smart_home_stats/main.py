@@ -70,10 +70,8 @@ def main():
         return
 
 
-    # 3. Словник для результатів
     results = {}
 
-    # 4. Обробка показників
     for parameter, stats in settings.items():
 
         parameter_data = data[parameter]
@@ -106,11 +104,9 @@ def main():
         results[parameter] = parameter_results
         su.print_results(parameter, parameter_results)
 
-    # 5. Виведення результатів
     print("\nРезультати обчислень:")
     print(json.dumps(results, ensure_ascii=False, indent=4))
 
-    # 6. Збереження результатів у JSON
     with open("results.json", "w", encoding="utf-8") as file:
         json.dump(results, file, ensure_ascii=False, indent=4)
 
